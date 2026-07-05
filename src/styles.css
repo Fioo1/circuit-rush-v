@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glass-panel {
+  @apply border border-white/15 bg-white/75 shadow-2xl backdrop-blur-xl dark:bg-white/[0.08];
+}
+
+.game-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-bold uppercase tracking-wide transition duration-300;
+}
+
+.game-button-primary {
+  @apply bg-cyan-300 text-slate-950 shadow-neon hover:-translate-y-1 hover:bg-yellow-300 hover:shadow-[0_0_34px_rgba(250,204,21,.45)];
+}
+
+.game-button-secondary {
+  @apply border border-white/15 bg-white/10 text-white hover:-translate-y-1 hover:bg-white/20;
+}
+
+.particle-field {
+  position: absolute;
+  inset: -80px;
+  opacity: .8;
+  background-image:
+    radial-gradient(circle, rgba(125, 211, 252, .45) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(250, 204, 21, .35) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(251, 113, 133, .35) 0 1px, transparent 1.5px);
+  background-position: 0 0, 70px 110px, 160px 40px;
+  background-size: 190px 190px, 230px 230px, 270px 270px;
+  animation: drift 18s linear infinite;
+}
+
+.arena-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, .22), transparent);
+  animation: scan 4s linear infinite;
+}
+
+.node-hit {
+  animation: nodeHit 280ms ease-out;
+}
+
+@keyframes nodeHit {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(.92);
+    opacity: .55;
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 16px;
+  border-radius: 3px;
+  animation: confettiFall var(--fall-duration) linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translate3d(var(--fall-x), 110vh, 0) rotate(760deg);
+    opacity: .15;
+  }
+}
