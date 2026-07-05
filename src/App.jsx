@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from "react";
 import StartPage from './pages/StartPage.jsx';
 import GamePage from './pages/GamePage.jsx';
 import ResultPage from './pages/ResultPage.jsx';
