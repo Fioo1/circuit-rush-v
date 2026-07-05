@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { LEVELS, MAX_LIVES, NODE_TYPES, SPECIAL_TYPES, TARGET_SEQUENCE, getLevelTarget } from '../utils/gameConfig.js';
 import { calculateNodeScore } from '../utils/scoring.js';
 
-const randomId = () => crypto.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
+const randomId = () => globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
 const randomFrom = (items) => items[Math.floor(Math.random() * items.length)];
 
 function makeNode(level, targetType, index) {
