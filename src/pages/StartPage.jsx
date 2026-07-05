@@ -20,7 +20,7 @@ export default function StartPage({ bestScore, onStart }) {
             <RadioTower size={17} /> 5 niveles de reflejos, memoria y precisión
           </div>
           <h2 className="font-display text-6xl font-bold leading-[0.9] text-white sm:text-7xl lg:text-8xl">
-            Domina el pulso del núcleo.
+            Domina el pulso del núcleo
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
             Sincroniza nodos de energía antes de que desaparezcan, esquiva sobrecargas, encadena combos y alcanza el núcleo final con el mayor récord posible.
